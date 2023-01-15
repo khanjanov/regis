@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./layout";
+@import "./mixins";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+.header {
+  .container {
+    width: 100%;
+    @include center;
+    padding: 40px 0;
+    &__wrapper {
+      width: 100%;
+      @include d_flex_sb;
+      gap: 20px;
+      &--tittle {
+        text-transform: uppercase;
+      }
+      &--burgerm {
+        display: none;
+      }
+      &--nav {
+        display: flex;
+        align-items: center;
+        a {
+          padding-right: 20px;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+main {
+  .section {
+    .container {
+      @include center;
+      &__wrapper {
+        &--goods {
+          div {
+            padding-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+footer {
+  .container {
+    width: 100%;
+    @include d_flex_sb;
+    &__socials {
+      img {
+        padding: 40px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  * {
+    overflow-x: hidden;
+  }
+  .header {
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      &__wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 18px;
+        &--tittle {
+          font-size: 24px;
+        }
+        &--burgerm {
+          display: block;
+        }
+        &--nav {
+          display: none;
+        }
+      }
+    }
+  }
+  main {
+    .section {
+      .container {
+        max-width: 767px;
+        margin: 0 auto;
+        &__wrapper {
+          max-width: 767px;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          &--goods {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            div {
+              padding: 0 16px 16px 16px;
+              img {
+                width: 370px;
+                height: 450px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
